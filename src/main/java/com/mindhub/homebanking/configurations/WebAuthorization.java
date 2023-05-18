@@ -49,7 +49,7 @@ public class WebAuthorization {
                 })
                 .failureHandler((req, res, exc) -> {
                     Map <String,Object> errorResponse = new HashMap<>();
-                    errorResponse.put("messaje", "Login failed");
+                    errorResponse.put("message", "Login failed");
                     res.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
                     res.setContentType("application/json");
                     res.getWriter().write(new ObjectMapper().writeValueAsString(errorResponse));
